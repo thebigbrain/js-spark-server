@@ -1,0 +1,23 @@
+{
+  "name": "js-spark-server",
+  "version": "1.0.0",
+  "description": "./config - all configs\r ./controller - uses services\r ./model - may be ugly, but sometimes required\r ./service - may delegate or even proxy to model, make sure to design good API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebigbrain/js-spark-server.git"
+  },
+  "keywords": [
+    "js-spark",
+    "spark"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thebigbrain/js-spark-server/issues"
+  },
+  "homepage": "https://github.com/thebigbrain/js-spark-server#readme"
+}
