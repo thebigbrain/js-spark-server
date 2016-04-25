@@ -14,6 +14,13 @@ var config = require('./config/environment');
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
 
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log("db connected");
+});
+
 // Populate DB with sample data
 if (config.seedDB) {
     require('./config/seedDb');
@@ -29,8 +36,8 @@ var di = require(ROOT + 'controller/di')(
 var app = di.get('app');
 var server = di.get('server');
 var socketio = di.get('io.server');
-require('./config/express')(app);
-require('./routes')(app, di);
+//require('./config/express')(app);
+//require('./routes')(app, di);
 
 // Start server
 server.listen(config.port, config.ip, function () {
@@ -59,5 +66,4 @@ setInterval(
             });
     }, 5000
 );
-
 
