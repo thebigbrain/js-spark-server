@@ -116,6 +116,10 @@ var services = {
             JSON
         );
     },
+    'service.jobManager': function addService(di){
+        var jobManager = require(ROOT_PATH + "service/jobManager");
+        return jobManager;
+    },
     'service.taskManager': function addService(di) {
         var taskManager = require(ROOT_PATH + 'service/taskManager')(
             di.get('config'),

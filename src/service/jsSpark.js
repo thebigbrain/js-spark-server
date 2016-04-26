@@ -1,4 +1,4 @@
-module.exports = function jsSParkService(taskManager, _) {
+module.exports = function jsSParkService(jobManager, _) {
 
     // is a monad
     // TODO use newChainedMethod not to double code and change run()
@@ -76,9 +76,8 @@ module.exports = function jsSParkService(taskManager, _) {
         // TODO args = options{timeout,...}
         // factory method
         // :: object -> deferred
-        function run(taskConfig) {
-            var task = {
-
+        function run(jobConfig) {
+            var job = {
                 operations: operations,
 
                 execute: function (_, data) {
@@ -92,8 +91,7 @@ module.exports = function jsSParkService(taskManager, _) {
 
                 data: array
             };
-
-            return taskManager.addTask(task, taskConfig);
+            return jobManager.addJob(job, jobConfig);
         }
     }
 };
